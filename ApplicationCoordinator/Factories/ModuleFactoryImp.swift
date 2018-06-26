@@ -3,6 +3,7 @@ final class ModuleFactoryImp { }
 extension ModuleFactoryImp : AuthModuleFactory {
 
   func makeLoginOutput() -> LoginView {
+    // pull LoginController from .auth storyboard
     return LoginController.controllerFromStoryboard(.auth)
   }
 
