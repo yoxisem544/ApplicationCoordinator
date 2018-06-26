@@ -61,14 +61,17 @@ final class ApplicationCoordinator: BaseCoordinator {
 
   // first run, and not yet logged in
   private func runAuthFlow() {
+    // build coordinator for auth flow
+    // router is needed here for auth coordinator to coordinate its auth flow
     let coordinator = coordinatorFactory.makeAuthCoordinatorBox(router: router)
     coordinator.finishFlow = { [weak self, weak coordinator] in
+      // when auth flow finished, change flag
       isAutorized = true
-      self?.start()
-      self?.removeDependency(coordinator)
+      self?.start() // start application coordinator again for next scene.
+      self?.removeDependency(coordinator) // remove auth coordinator
     }
-    addDependency(coordinator)
-    coordinator.start()
+    addDependency(coordinator) // add coordinator
+    coordinator.start() // start auth coordinator
   }
   
   private func runOnboardingFlow() {
