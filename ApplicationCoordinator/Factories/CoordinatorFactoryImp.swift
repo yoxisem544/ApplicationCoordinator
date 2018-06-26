@@ -5,9 +5,10 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     let coordinator = TabbarCoordinator(tabbarView: controller, coordinatorFactory: CoordinatorFactoryImp())
     return (coordinator, controller)
   }
-  
+
+  // will need router for auth coordinator to coordinate its auth flow
+  // login -> signup -> terms
   func makeAuthCoordinatorBox(router: Router) -> Coordinator & AuthCoordinatorOutput {
-    
     let coordinator = AuthCoordinator(router: router, factory: ModuleFactoryImp())
     return coordinator
   }
