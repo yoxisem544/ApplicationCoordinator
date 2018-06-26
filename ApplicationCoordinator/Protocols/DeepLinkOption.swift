@@ -8,8 +8,11 @@ struct DeepLinkURLConstants {
   static let SignUp = "signUp"
 }
 
+// 可能的 deeplink 型態
 enum DeepLinkOption {
-  
+
+  // 在此定義型態
+  // 還有特定形態的 deeplink 會帶有資訊，如 user_id, redirect url 等等
   case onboarding
   case items
   case settings
@@ -17,7 +20,8 @@ enum DeepLinkOption {
   case terms
   case signUp
   case item(String?)
-  
+
+  // 接到 deeplink 時，將 user activity 變成可用的 DeepLinkOption.
   static func build(with userActivity: NSUserActivity) -> DeepLinkOption? {
     if userActivity.activityType == NSUserActivityTypeBrowsingWeb,
       let url = userActivity.webpageURL,
@@ -26,7 +30,8 @@ enum DeepLinkOption {
     }
     return nil
   }
-  
+
+  // 接到 deeplink 時，將 dictionary (如 userInfo) 變成可用的 DeepLinkOption.
   static func build(with dict: [String : AnyObject]?) -> DeepLinkOption? {
     guard let id = dict?["launch_id"] as? String else { return nil }
     
