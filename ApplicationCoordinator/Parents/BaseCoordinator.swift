@@ -1,3 +1,5 @@
+// base coordinator implementation
+// FIXME: maybe use protocol here
 class BaseCoordinator: Coordinator {
   
   var childCoordinators: [Coordinator] = []
@@ -5,7 +7,8 @@ class BaseCoordinator: Coordinator {
   func start() {
     start(with: nil)
   }
-  
+
+  // will be implemented later.
   func start(with option: DeepLinkOption?) { }
   
   // add only unique object

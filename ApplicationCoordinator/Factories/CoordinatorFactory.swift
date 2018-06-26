@@ -1,3 +1,4 @@
+// Factory to make coordinators
 protocol CoordinatorFactory {
   
   func makeTabbarCoordinator() -> (configurator: Coordinator, toPresent: Presentable?)
