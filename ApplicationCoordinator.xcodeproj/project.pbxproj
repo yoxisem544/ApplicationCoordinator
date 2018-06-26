@@ -350,6 +350,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		63E1250220E268C60025E20F /* Module Factory */ = {
+			isa = PBXGroup;
+			children = (
+				0E6A42BF1CF4E06C005746EC /* ItemModuleFactory.swift */,
+				0E6A42C11CF4E29F005746EC /* ItemCreateModuleFactory.swift */,
+				0E6A42C31CF4E300005746EC /* AuthModuleFactory.swift */,
+				0E6A42C51CF4E45F005746EC /* SettingsModuleFactory.swift */,
+				AD2BFC0A1E75B2730059C854 /* OnboardingModuleFactory.swift */,
+			);
+			name = "Module Factory";
+			sourceTree = "<group>";
+		};
 		77E054B11D79312700147DAE /* ApplicationCoordinatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,11 +519,7 @@
 			children = (
 				0E6A42C71CF4E4C4005746EC /* Imp */,
 				0E6A42BD1CF4DE62005746EC /* CoordinatorFactory.swift */,
-				0E6A42BF1CF4E06C005746EC /* ItemModuleFactory.swift */,
-				0E6A42C11CF4E29F005746EC /* ItemCreateModuleFactory.swift */,
-				0E6A42C31CF4E300005746EC /* AuthModuleFactory.swift */,
-				0E6A42C51CF4E45F005746EC /* SettingsModuleFactory.swift */,
-				AD2BFC0A1E75B2730059C854 /* OnboardingModuleFactory.swift */,
+				63E1250220E268C60025E20F /* Module Factory */,
 			);
 			name = Factories;
 			path = ApplicationCoordinator/Factories;
