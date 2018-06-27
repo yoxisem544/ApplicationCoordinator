@@ -1,3 +1,4 @@
+// Settings won't have any output
 final class SettingsCoordinator: BaseCoordinator {
   
   private let factory: SettingsModuleFactory

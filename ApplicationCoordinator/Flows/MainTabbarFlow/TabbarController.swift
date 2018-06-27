@@ -15,10 +15,13 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate, Ta
   
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     guard let controller = viewControllers?[selectedIndex] as? UINavigationController else { return }
-    
+
+    // 2 tab bar items here
+    // first is item flow
     if selectedIndex == 0 {
       onItemFlowSelect?(controller)
     }
+    // second is setting flow
     else if selectedIndex == 1 {
       onSettingsFlowSelect?(controller)
     }
