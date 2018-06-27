@@ -78,6 +78,8 @@ final class ApplicationCoordinator: BaseCoordinator {
   private func runOnboardingFlow() {
     let coordinator = coordinatorFactory.makeOnboardingCoordinator(router: router)
     // FIXME: why weak coordinator here?
+    // if coordinator is not capture weak here
+    // finish flow in coordinator will keep 
     coordinator.finishFlow = { [weak self, weak coordinator] in
       onboardingWasShown = true
       self?.start()

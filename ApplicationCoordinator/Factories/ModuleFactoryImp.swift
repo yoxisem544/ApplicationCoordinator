@@ -20,6 +20,7 @@ extension ModuleFactoryImp : AuthModuleFactory {
 extension ModuleFactoryImp : OnboardingModuleFactory {
 
   func makeOnboardingModule() -> OnboardingView {
+    // simply pull one page onboarding controller
     return OnboardingController.controllerFromStoryboard(.onboarding)
   }
 
