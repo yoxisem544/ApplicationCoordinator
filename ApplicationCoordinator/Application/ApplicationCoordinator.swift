@@ -73,9 +73,11 @@ final class ApplicationCoordinator: BaseCoordinator {
     addDependency(coordinator) // add coordinator
     coordinator.start() // start auth coordinator
   }
-  
+
+  // after auth flow, run onboarding flow
   private func runOnboardingFlow() {
     let coordinator = coordinatorFactory.makeOnboardingCoordinator(router: router)
+    // FIXME: why weak coordinator here?
     coordinator.finishFlow = { [weak self, weak coordinator] in
       onboardingWasShown = true
       self?.start()
